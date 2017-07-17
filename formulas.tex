@@ -1,0 +1,110 @@
+\documentclass{article}
+
+\begin{document}
+As f\'{o}rmulas podem conter erros de transcri\c{c}\~{a}o cheque com fontes confi\'{a}veis.
+
+\[n!=1\cdot 2 \cdot3 \cdot ... \cdot (n-1) \cdot n\]
+\[x=log_{b}(b^{x}); y=b^{log_{b}(y)}\] (http://mathworld.wolfram.com/Logarithm.html)
+
+\[E(X)= \sum_{X}x \cdot f(x)\]
+
+\begin {center}
+Def: Dizemos que $g(n)$ domina $f(n)$ se
+
+e somente se existem constantes 
+
+$c > 0$ e $n_0 \geq 0$ tais que
+\[0 \leq f(n) \leq c*g(n)  \forall n \geq n_0\]
+\end {center}
+
+\begin {center}
+
+Def: Dizemos que O-grande de $g(n)$ \'{e} o conjunto
+
+de fun\c{c}\~{o}es $f$ tais que $g$ domina qualquer $f$. 
+
+\[O(g(n))=\{f: 0 \leq f(n) \leq c*g(n)  \forall n \geq n_0, c>0, n_0 \geq 0\}\]
+
+{\bf nota}: para cada par $f$, $g$ as constantes $c$ e $n_0$ 
+
+podem ser diferentes.
+
+\end {center}
+
+
+\begin {center}
+
+Def: Dizemos que \^{o}mega-grande de $g(n)$ \'{e} o conjunto
+
+de fun\c{c}\~{o}es $f$ tais que $g$ \'{e} dominada por qualquer $f$. 
+
+\[\Omega(g(n))=\{f: 0 \leq c*g(n) \leq f(n)  \forall n \geq n_0, c>0, n_0 \geq 0\}\]
+
+{\bf nota}: para cada par $f$, $g$ as constantes $c$ e $n_0$ 
+
+podem ser diferentes.
+
+\end {center}
+
+\begin {center}
+
+Def: Dizemos que teta-grande de $g(n)$ \'{e} o conjunto
+
+de fun\c{c}\~{o}es $f$ tais que $g$ domina e \'{e} dominada por qualquer $f$. 
+
+\[\Theta(g(n))=\{f: 0 \leq c_{1}*g(n) \leq f(n) \leq c_{2}*g(n)  \forall n \geq n_0, c_{1}, c_{2}>0, n_0 \geq 0\}\]
+
+{\bf nota}: h\'a duas constantes multiplicativas distintas!!! 
+
+podem ser diferentes.
+
+Teorema Mestre:
+
+Dada a recorr\^encia $T(n)=aT(\frac{n}{b})+f(n)$
+
+caso 2: Se $f(n) \in \Theta (n^{log_{b}(a)}) \Rightarrow T(n) \in \Theta(n^{log_{b}(a)}*lg(n))$
+
+caso 1: Se $f(n) \in O (n^{log_{b}(a) - \epsilon}) \Rightarrow T(n) \in \Theta(n^{log_{b}(a)})$
+
+caso 3: Se $f(n) \in \Omega (n^{log_{b}(a) + \epsilon})$ ...
+
+e $a*f(\frac{n}{b}) \leq c*f(n); 0<c<1 \Rightarrow T(n) \in \Theta(f(n))$
+
+Aproxima\c{c}\~ao de Stirling:
+
+\[n!=\sqrt{2\pi n}(\frac{n}{e})^n(1+O(\frac{1}{n}))\]
+
+
+\end {center}
+
+\newpage
+exerc\'{\i}cios:
+
+\begin {enumerate}
+\item Demonstre que $n \in O(n^2)$
+\item Demonstre que $n^2 \in O(n^2)$
+\item Demonstre que $n^2-5n \in O(n^2)$
+\item Demonstre que $n^2 \in O(n^2-5n)$
+\item Demonstre que $lg(n) \in O(log(n))$
+\item Demonstre que $log(n) \in O(ln(n))$
+\item Demonstre que $n^{4}+30n^{3}+n^{2}+n \in O(n^4)$
+\item Demonstre que $T(n) \in O(lg(n))$
+\[T(n)= \left \{ 
+\begin{array}{l}
+T(0)=1; \\
+T(n)=T(n/2)+1;
+\end {array} \right.
+\]
+\item Demonstre que $T(n) \in O(n^2)$
+\[T(n)= \left \{ 
+\begin{array}{l}
+T(0)=1; \\
+T(n)=T(n-1)+1;
+\end {array} \right.
+\]
+\end{enumerate}
+Demonstre que $n^2 \notin O(n)$
+
+\[\{c, n_0 : 0 \leq f(n) \leq c*g(n) \}\]
+
+\end{document}
